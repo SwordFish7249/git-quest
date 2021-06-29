@@ -4,12 +4,16 @@ function Character(config) {
   this.health = config.health;
   this.maxHealth = config.maxHealth;
   this.dialogue = config.dialogue;
+  this.level = config.level || 1;
+  this.baseAttack = config.baseAttack || 0;
+  this.baseDefence = config.baseDefence || 0;
 }
 
 Character.prototype = {
   get isAlive() {
     return this.health > 0;
   },
+  
   _takeDamage: function (damage) {
     this.health -= damage;
     if (this.health < 0) {
@@ -25,6 +29,7 @@ Character.prototype = {
   speak: function () {
     return this.dialogue;
   },
+  
 };
 
 module.exports = Character;
