@@ -70,4 +70,18 @@ describe('character', () => {
       expect(character.health).toBe(10);
     });
   });
+  describe('Attack Level', () => {
+    it('Show your charater Attack Power', () => {
+      character.level = 5;
+      character.baseAttack = 10;
+      expect(character.attackTotal).toBe(15);
+    })
+  })
+  describe('Defence Level', () => {
+    it('Show your character Defence Power', () =>{
+      character.level = 8;
+      character.baseDefence = 5;
+      expect(character.defenceTotal).toBe(13);
+    })
+  })
 });

@@ -13,7 +13,12 @@ Character.prototype = {
   get isAlive() {
     return this.health > 0;
   },
-  
+  get attackTotal() {
+    return this.baseAttack + this.level;
+  },
+  get defenceTotal(){
+    return this.baseDefence + this.level;
+  },
   _takeDamage: function (damage) {
     this.health -= damage;
     if (this.health < 0) {
